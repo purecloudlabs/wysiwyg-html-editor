@@ -1,0 +1,13 @@
+{
+  "name": "wysiwyg-html-editor",
+  "version": "0.0.1",
+  "private": true,
+  "description": "A reusable \"What You See Is What You Get\" html text editor library for PureCloud",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://bitbucket.org/inindca/wysiwyg-html-editor.git"
+  },
+  "author": "Interactive Intelligence, Inc.",
+  "homepage": "https://bitbucket.org/inindca/wysiwyg-html-editor#readme"
+}
