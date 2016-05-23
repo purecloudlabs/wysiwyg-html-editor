@@ -10,6 +10,7 @@
   },
   "scripts": {
     "build": "webpack --config webpack.config.js",
+    "example": "echo 'Open a browser to localhost:8000/example' && python -m SimpleHTTPServer",
     "postinstall": "npm run build"
   },
   "author": "Interactive Intelligence, Inc.",
