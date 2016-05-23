@@ -8,6 +8,14 @@
     "type": "git",
     "url": "git+https://bitbucket.org/inindca/wysiwyg-html-editor.git"
   },
+  "scripts": {
+    "build": "webpack --config webpack.config.js",
+    "postinstall": "npm run build"
+  },
   "author": "Interactive Intelligence, Inc.",
-  "homepage": "https://bitbucket.org/inindca/wysiwyg-html-editor#readme"
+  "homepage": "https://bitbucket.org/inindca/wysiwyg-html-editor#readme",
+  "devDependencies": {
+    "imports-loader": "^0.6.5",
+    "json-loader": "^0.5.4"
+  }
 }
