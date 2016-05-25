@@ -11,13 +11,15 @@
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "example": "echo 'Open a browser to localhost:8000/example' && python -m SimpleHTTPServer",
-    "postinstall": "npm run build"
+    "postinstall": "npm run build",
+    "watch": "nodemon --watch src --exec \"npm run build\""
   },
   "author": "Interactive Intelligence, Inc.",
   "homepage": "https://bitbucket.org/inindca/wysiwyg-html-editor#readme",
   "devDependencies": {
     "imports-loader": "^0.6.5",
     "json-loader": "^0.5.4",
+    "lodash": "^4.13.1",
     "quill": "^1.0.0-beta.2"
   }
 }
