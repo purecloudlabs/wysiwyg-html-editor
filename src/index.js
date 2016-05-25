@@ -1,4 +1,4 @@
-var Quill = require("quilljs")
+var Quill = require("quill")
 
 function Editor(target) {
     var quill = new Quill(target);
