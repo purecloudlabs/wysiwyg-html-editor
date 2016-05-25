@@ -18,6 +18,10 @@ module.exports = {
                 // https://github.com/webpack/webpack/issues/829
                   test: /eventemitter2/,
                   loader: 'imports?define=>false'
+            },
+            {
+                test: /.html$/,
+                loader: "html-loader"
             }
         ]
     }
