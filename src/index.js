@@ -1,9 +1,7 @@
-var Quill = require("quill")
+var EditorBuilder = require("./EditorBuilder");
+var Quill = require("quill");
 
-function Editor(target) {
-    var quill = new Quill(target);
-
-    this._quill = quill;
+module.exports = {
+    EditorBuilder: EditorBuilder,
+    _Quill: Quill
 }
-
-module.exports = Editor;

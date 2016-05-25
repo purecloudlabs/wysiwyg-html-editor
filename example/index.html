@@ -4,6 +4,8 @@
         <meta charset="utf-8">
         <title></title>
         <script src="../lib.js"></script>
+        <link href="../node_modules/quill/dist/quill.css" rel="stylesheet">
+        <link href="../node_modules/quill/dist/quill.snow.css" rel="stylesheet">
     </head>
     <body>
         <div id="toolbar"></div>
@@ -11,7 +13,8 @@
             This is a WYSIWYG Editor
         </div>
         <script type="text/javascript">
-            new Editor("#editor");
+            new Editor.EditorBuilder("#editor")
+                .build();
         </script>
     </body>
 </html>
