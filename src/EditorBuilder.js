@@ -12,6 +12,12 @@ var DEFAULT_TOOLBAR_HTML = require("./defaultToolbar.html");
    Uses a fluent interface
 */
 function EditorBuilder(target) {
+    if(typeof target === "string") {
+        target = document.querySelector(target);
+    }
+    if(!target) {
+        throw new Error("Need a target element or selector for the editor")
+    }
     this.target = target;
     this.options = _assign({}, DEFAULT_OPTIONS);
 }
@@ -19,9 +25,14 @@ function EditorBuilder(target) {
 EditorBuilder.prototype.withDefaultToolbar = function (toolbarContainer) {
     if(typeof toolbarContainer === "string") {
         toolbarContainer = document.querySelector(toolbarContainer);
+
+        if(!toolbarContainer) {
+            throw new Error("No toolbar found based on CSS selector");
+        }
     }
     if(!toolbarContainer) {
-        throw new Error("Need a toolbar container element or a selector");
+        toolbarContainer = document.createElement("div");
+        this.target.parentElement.insertBefore(toolbarContainer, this.target);
     }
 
     toolbarContainer.innerHTML = DEFAULT_TOOLBAR_HTML;
