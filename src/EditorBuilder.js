@@ -13,6 +13,9 @@ var DEFAULT_TOOLBAR_HTML = require("./defaultToolbar.html");
    Uses a fluent interface
 */
 function EditorBuilder(target) {
+    //Include the necessary CSS files, if it hasn't been included already
+    require("quill/dist/quill.css");
+
     if(typeof target === "string") {
         target = document.querySelector(target);
     }
@@ -24,6 +27,9 @@ function EditorBuilder(target) {
 }
 
 EditorBuilder.prototype.withDefaultToolbar = function (toolbarContainer) {
+    ///Include the theme style, if it hasn't been included already
+    require("quill/dist/quill.snow.css");
+
     if(typeof toolbarContainer === "string") {
         toolbarContainer = document.querySelector(toolbarContainer);
 

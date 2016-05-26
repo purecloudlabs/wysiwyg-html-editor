@@ -20,6 +20,10 @@ module.exports = {
                 loader: 'imports?define=>false'
             },
             {
+                test: /\.css$/,
+                loader: "style-loader!css-loader"
+            },
+            {
                 test: /.html$/,
                 loader: "html-loader"
             }
