@@ -1,3 +1,5 @@
+"use strict";
+
 var Quill = require("quill");
 
 function Editor(target, options) {

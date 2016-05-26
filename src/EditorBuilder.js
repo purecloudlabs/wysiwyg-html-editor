@@ -1,6 +1,7 @@
+"use strict";
+
 var Editor = require("./Editor");
 var _assign = require("lodash/assign");
-
 
 var DEFAULT_OPTIONS = {};
 var DEFAULT_TOOLBAR_HTML = require("./defaultToolbar.html");
@@ -16,7 +17,7 @@ function EditorBuilder(target) {
         target = document.querySelector(target);
     }
     if(!target) {
-        throw new Error("Need a target element or selector for the editor")
+        throw new Error("Need a target element or selector for the editor");
     }
     this.target = target;
     this.options = _assign({}, DEFAULT_OPTIONS);
@@ -49,6 +50,6 @@ EditorBuilder.prototype.withDefaultToolbar = function (toolbarContainer) {
 
 EditorBuilder.prototype.build = function () {
     return new Editor(this.target, this.options);
-}
+};
 
 module.exports = EditorBuilder;
