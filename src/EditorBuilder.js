@@ -6,11 +6,12 @@ var _assign = require("lodash/assign");
 var DEFAULT_OPTIONS = {};
 var DEFAULT_TOOLBAR_HTML = require("./defaultToolbar.html");
 
-/*
-   A builder that constructs the WYSIWYG editor; allowing options like the toolbar to be specified
-   Used because QuillJS (v1.0.0) expects all configuration options upfront, but it's nice to avoid
-       having that much complexity in a wrapper constructor
-   Uses a fluent interface
+/**
+ * A builder that constructs the WYSIWYG editor with a fluent interface;
+ * Used because QuillJS (v1.0.0) expects all configuration options upfront, but it's nice to avoid
+ *     having that much complexity in a wrapper constructor
+ * @constructor
+ * @param {String | HTMLElement} target - DOM element, (or CSS selector) to hold the editor
 */
 function EditorBuilder(target) {
     //Include the necessary CSS files, if it hasn't been included already
@@ -26,6 +27,12 @@ function EditorBuilder(target) {
     this.options = _assign({}, DEFAULT_OPTIONS);
 }
 
+/**
+ * Adds a default toolbar, with preset options; the default toolbar HTML will be inserted into the
+ *     specified element and hooked up to the editor
+ * @param {String | HTMLElement} toolbarContainer - Element or CSS selector to hold the toolbar
+ * @returns {this}
+ */
 EditorBuilder.prototype.withDefaultToolbar = function (toolbarContainer) {
     ///Include the theme style, if it hasn't been included already
     require("quill/dist/quill.snow.css");
@@ -53,6 +60,11 @@ EditorBuilder.prototype.withDefaultToolbar = function (toolbarContainer) {
 
     return this;
 };
+
+/**
+ * Builds the editor based on the specified options.
+ * @returns {Editor}
+ */
 
 EditorBuilder.prototype.build = function () {
     return new Editor(this.target, this.options);
