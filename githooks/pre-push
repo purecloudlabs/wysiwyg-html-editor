@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo "pre-push: Running a build to ensure lib.js is up-to-date"
+
+npm run build
+
+if git ls-files -m lib.js | grep .
+then
+    echo "pre-push: Error - uncommited changes to lib.js; please commit those before pushing"
+    exit 1
+fi
