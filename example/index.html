@@ -22,7 +22,7 @@
             function updateOutput() {
                 output.textContent = editor.getHTML();
             }
-            editor._quill.on("text-change", updateOutput);
+            editor.on("text-change", updateOutput);
             updateOutput();
         </script>
     </body>
