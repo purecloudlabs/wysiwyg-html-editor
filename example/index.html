@@ -11,16 +11,18 @@
             This is a WYSIWYG Editor
         </div>
         <br />
-        <div id="output">
-        </div>
+        <pre id="output-text" style="background-color:beige; border: 1px solid black; white-space: pre-wrap"></pre>
+        <div id="output-html"></div>
         <script type="text/javascript">
             var editor = new Editor.EditorBuilder("#editor")
                 .withDefaultToolbar("#toolbar")
                 .build();
 
-            var output = document.getElementById("output");
+            var outputText = document.getElementById("output-text");
+            var outputHTML = document.getElementById("output-html");
             function updateOutput() {
-                output.textContent = editor.getHTML();
+                outputText.textContent = editor.getHTML();
+                outputHTML.innerHTML = editor.getHTML();
             }
             editor.on("text-change", updateOutput);
             updateOutput();
