@@ -10,10 +10,20 @@
         <div id="editor">
             This is a WYSIWYG Editor
         </div>
+        <br />
+        <div id="output">
+        </div>
         <script type="text/javascript">
-            new Editor.EditorBuilder("#editor")
+            var editor = new Editor.EditorBuilder("#editor")
                 .withDefaultToolbar("#toolbar")
                 .build();
+
+            var output = document.getElementById("output");
+            function updateOutput() {
+                output.textContent = editor.getHTML();
+            }
+            editor._quill.on("text-change", updateOutput);
+            updateOutput();
         </script>
     </body>
 </html>
