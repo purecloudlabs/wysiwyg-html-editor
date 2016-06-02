@@ -53,6 +53,9 @@ Builds the editor based on the specified options.
 * [Editor](#markdown-header-editor)
     * [new Editor(targetEl, options)](#markdown-header-new-editortargetel-options)
     * [.getHTML()](#markdown-header-editorgethtml-string) ⇒ String
+    * [.setHTML(html)](#markdown-header-editorsethtmlhtml)
+    * [.insertHTML(html, index)](#markdown-header-editorinserthtmlhtml-index)
+    * [.getLength()](#markdown-header-editorgetlength-number) ⇒ number
     * [.on()](#markdown-header-editoron)
     * [.off()](#markdown-header-editoroff)
     * [.once()](#markdown-header-editoronce)
@@ -70,6 +73,38 @@ Constructs an Editor (a thin wrapper around QuillJS)
 
 ### editor.getHTML() ⇒ String
 Returns the contents of the editor as html
+
+**Kind**: instance method of [Editor](#markdown-header-new-editortargetel-options)  
+### editor.setHTML(html)
+Replaces the contents of the editor with specified html
+
+**Kind**: instance method of [Editor](#markdown-header-new-editortargetel-options)  
+
+| Param | Type |
+| --- | --- |
+| html | String | 
+
+### editor.insertHTML(html, index)
+Inserts html into the editor
+
+**Kind**: instance method of [Editor](#markdown-header-new-editortargetel-options)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| html | String |  |
+| index | number | the index (based on text content) to insert the html;                            defaults to appending html to the end, after the trailing newline |
+
+**Example**  
+```js
+//Inserted before existing contents
+editor.insertHTML("HODOR", 0);
+//Inserted after last line of existing contents
+editor.insertHTML("HODOR");
+//Inserted at the end of the last line of existing contents (before trailing newline)
+editor.insertHTML("HODOR", editor.getLength() - 1);
+```
+### editor.getLength() ⇒ number
+Get the length of the Editor text content
 
 **Kind**: instance method of [Editor](#markdown-header-new-editortargetel-options)  
 ### editor.on()

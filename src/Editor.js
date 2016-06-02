@@ -43,6 +43,43 @@ Editor.prototype.getHTML = function() {
 };
 
 /**
+ * Replaces the contents of the editor with specified html
+ * @param {String} html
+ */
+Editor.prototype.setHTML = function(html) {
+    this._quill.pasteHTML(html);
+};
+
+/**
+ * Inserts html into the editor
+ * @param {String} html
+ * @param {number} index - the index (based on text content) to insert the html;
+                           defaults to appending html to the end, after the trailing newline
+ * @example
+ * //Inserted before existing contents
+ * editor.insertHTML("HODOR", 0);
+ * //Inserted after last line of existing contents
+ * editor.insertHTML("HODOR");
+ * //Inserted at the end of the last line of existing contents (before trailing newline)
+ * editor.insertHTML("HODOR", editor.getLength() - 1);
+ */
+Editor.prototype.insertHTML = function (html, index) {
+    if(!index && index !== 0) {
+        index = this.getLength();
+    }
+    this._quill.pasteHTML(index, html);
+};
+
+/**
+ * Get the length of the Editor text content
+ * @returns {number}
+ */
+
+Editor.prototype.getLength = function () {
+    return this._quill.getLength();
+};
+
+/**
  * See [EventEmitter.on](https://nodejs.org/api/events.html#events_emitter_on_eventname_listener)
  */
 
