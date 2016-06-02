@@ -43,7 +43,7 @@ Editor.prototype.getHTML = function() {
 };
 
 /**
- * @alias EventEmitter.on
+ * See [EventEmitter.on](https://nodejs.org/api/events.html#events_emitter_on_eventname_listener)
  */
 
 Editor.prototype.on = function() {
@@ -51,7 +51,7 @@ Editor.prototype.on = function() {
 };
 
 /**
- * @alias EventEmitter.off
+ * See [EventEmitter.removeListener](https://nodejs.org/api/events.html#events_emitter_removelistener_eventname_listener)
  */
 
 Editor.prototype.off = function() {
@@ -59,7 +59,7 @@ Editor.prototype.off = function() {
 };
 
 /**
- * @alias EventEmitter.once
+ * See [EventEmitter.once](https://nodejs.org/api/events.html#events_emitter_once_eventname_listener)
  */
 
 Editor.prototype.once = function() {

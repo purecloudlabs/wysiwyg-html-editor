@@ -183,6 +183,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	    this._quill = quill;
 	    this._emitter = emitter;
 
+	    /**
+	     * Text change event, fired whenever the contents of the editor have changed
+	     * @event Editor#text-change
+	     */
+
 	    quill.on("text-change", function () {
 	        emitter.emit("text-change");
 	    });
@@ -202,7 +207,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	/**
-	 * @alias EventEmitter.on
+	 * See [EventEmitter.on](https://nodejs.org/api/events.html#events_emitter_on_eventname_listener)
 	 */
 
 	Editor.prototype.on = function() {
@@ -210,7 +215,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	/**
-	 * @alias EventEmitter.off
+	 * See [EventEmitter.removeListener](https://nodejs.org/api/events.html#events_emitter_removelistener_eventname_listener)
 	 */
 
 	Editor.prototype.off = function() {
@@ -218,7 +223,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	/**
-	 * @alias EventEmitter.once
+	 * See [EventEmitter.once](https://nodejs.org/api/events.html#events_emitter_once_eventname_listener)
 	 */
 
 	Editor.prototype.once = function() {
