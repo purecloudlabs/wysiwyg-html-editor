@@ -1,3 +1,5 @@
+"use strict";
+
 module.exports = {
     entry: "./src/index.js",
     output: {
@@ -5,7 +7,7 @@ module.exports = {
         path: ".",
 
         libraryTarget: "umd",
-        library: "Editor"
+        library: "HTMLEditor" //The global variable exported by the UMD definition
     },
     module: {
         loaders: [

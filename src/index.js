@@ -4,6 +4,6 @@ var EditorBuilder = require("./EditorBuilder");
 var Quill = require("quill");
 
 module.exports = {
-    EditorBuilder: EditorBuilder,
+    Builder: EditorBuilder,
     _Quill: Quill
 };

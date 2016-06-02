@@ -4,9 +4,9 @@
 	else if(typeof define === 'function' && define.amd)
 		define([], factory);
 	else if(typeof exports === 'object')
-		exports["Editor"] = factory();
+		exports["HTMLEditor"] = factory();
 	else
-		root["Editor"] = factory();
+		root["HTMLEditor"] = factory();
 })(this, function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -60,7 +60,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	var Quill = __webpack_require__(3);
 
 	module.exports = {
-	    EditorBuilder: EditorBuilder,
+	    Builder: EditorBuilder,
 	    _Quill: Quill
 	};
 
