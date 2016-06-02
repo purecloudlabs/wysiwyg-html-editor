@@ -12,6 +12,7 @@ The library uses the [UMD pattern](https://github.com/umdjs/umd); if using the g
 
 Currently everything (including styling and html) is bundled into a single file `lib.js` for ease-of-use downstream.  
 
+See [documentation](API.md) and [example page](example/index.html) for API usage.
 
 ### Development ###
 
