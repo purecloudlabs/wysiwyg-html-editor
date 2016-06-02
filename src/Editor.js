@@ -19,6 +19,11 @@ function Editor(targetEl, options) {
     this._quill = quill;
     this._emitter = emitter;
 
+    /**
+     * Text change event, fired whenever the contents of the editor have changed
+     * @event Editor#text-change
+     */
+
     quill.on("text-change", function () {
         emitter.emit("text-change");
     });

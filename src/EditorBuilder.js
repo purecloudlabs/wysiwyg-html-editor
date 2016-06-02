@@ -61,6 +61,12 @@ EditorBuilder.prototype.withDefaultToolbar = function (toolbarContainer) {
     return this;
 };
 
+/**
+ * Adds placeholder text to display when the text editor is empty
+ * @param {String} placeholder
+ * @returns {this}
+ */
+
 EditorBuilder.prototype.withPlaceholderText = function (placeholder) {
     this.options = _assign(this.options, {
         placeholder: placeholder
