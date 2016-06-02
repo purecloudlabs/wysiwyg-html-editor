@@ -132,6 +132,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return this;
 	};
 
+	EditorBuilder.prototype.withPlaceholderText = function (placeholder) {
+	    this.options = _assign(this.options, {
+	        placeholder: placeholder
+	    });
+
+	    return this;
+	};
+
 	/**
 	 * Builds the editor based on the specified options.
 	 * @returns {Editor}
