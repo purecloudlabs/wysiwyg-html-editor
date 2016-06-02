@@ -56,11 +56,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	"use strict";
 
-	var EditorBuilder = __webpack_require__(1);
+	var Builder = __webpack_require__(1);
 	var Quill = __webpack_require__(3);
 
 	module.exports = {
-	    Builder: EditorBuilder,
+	    Builder: Builder,
 	    _Quill: Quill
 	};
 
@@ -84,7 +84,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * @constructor
 	 * @param {String | HTMLElement} target - DOM element, (or CSS selector) to hold the editor
 	*/
-	function EditorBuilder(target) {
+	function Builder(target) {
 	    //Include the necessary CSS files, if it hasn't been included already
 	    __webpack_require__(41);
 
@@ -104,7 +104,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * @param {String | HTMLElement} toolbarContainer - Element or CSS selector to hold the toolbar
 	 * @returns {this}
 	 */
-	EditorBuilder.prototype.withDefaultToolbar = function (toolbarContainer) {
+	Builder.prototype.withDefaultToolbar = function (toolbarContainer) {
 	    ///Include the theme style, if it hasn't been included already
 	    __webpack_require__(45);
 
@@ -138,7 +138,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * @returns {this}
 	 */
 
-	EditorBuilder.prototype.withPlaceholderText = function (placeholder) {
+	Builder.prototype.withPlaceholderText = function (placeholder) {
 	    this.options = _assign(this.options, {
 	        placeholder: placeholder
 	    });
@@ -151,11 +151,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * @returns {Editor}
 	 */
 
-	EditorBuilder.prototype.build = function () {
+	Builder.prototype.build = function () {
 	    return new Editor(this.target, this.options);
 	};
 
-	module.exports = EditorBuilder;
+	module.exports = Builder;
 
 
 /***/ },
@@ -169,7 +169,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 *  Constructs an Editor (a thin wrapper around QuillJS)
-	 *  Should use the EditorBuilder to construct one of these
+	 *  Should use the Builder to construct one of these
 	 *  @constructor
 	 *  @param {HTMLElement} targetEl - the DOM node that will be converted into the WYSIWYG editor
 	 *  @param {Object} options - the options provided to QuillJS

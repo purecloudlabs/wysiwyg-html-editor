@@ -1,9 +1,9 @@
 "use strict";
 
-var EditorBuilder = require("./EditorBuilder");
+var Builder = require("./Builder");
 var Quill = require("quill");
 
 module.exports = {
-    Builder: EditorBuilder,
+    Builder: Builder,
     _Quill: Quill
 };

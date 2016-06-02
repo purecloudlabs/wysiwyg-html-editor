@@ -5,7 +5,7 @@ var EventEmitter = require("eventemitter3");
 
 /**
  *  Constructs an Editor (a thin wrapper around QuillJS)
- *  Should use the EditorBuilder to construct one of these
+ *  Should use the Builder to construct one of these
  *  @constructor
  *  @param {HTMLElement} targetEl - the DOM node that will be converted into the WYSIWYG editor
  *  @param {Object} options - the options provided to QuillJS

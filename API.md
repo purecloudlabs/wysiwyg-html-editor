@@ -2,9 +2,51 @@
 ## Classes
 Global | Description
 ------ | -----------
+Builder | 
 Editor | 
-EditorBuilder | 
 
+## Builder
+**Kind**: global class  
+
+* [Builder](#markdown-header-builder)
+    * [new Builder(target)](#markdown-header-new-buildertarget)
+    * [.withDefaultToolbar(toolbarContainer)](#markdown-header-builderwithdefaulttoolbartoolbarcontainer-this) ⇒ this
+    * [.withPlaceholderText(placeholder)](#markdown-header-builderwithplaceholdertextplaceholder-this) ⇒ this
+    * [.build()](#markdown-header-builderbuild-editor) ⇒ Editor
+
+### new Builder(target)
+A builder that constructs the WYSIWYG editor with a fluent interface;
+Used because QuillJS (v1.0.0) expects all configuration options upfront, but it's nice to avoid
+    having that much complexity in a wrapper constructor
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| target | String ⎮ HTMLElement | DOM element, (or CSS selector) to hold the editor |
+
+### builder.withDefaultToolbar(toolbarContainer) ⇒ this
+Adds a default toolbar, with preset options; the default toolbar HTML will be inserted into the
+    specified element and hooked up to the editor
+
+**Kind**: instance method of [Builder](#markdown-header-new-buildertarget)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| toolbarContainer | String ⎮ HTMLElement | Element or CSS selector to hold the toolbar |
+
+### builder.withPlaceholderText(placeholder) ⇒ this
+Adds placeholder text to display when the text editor is empty
+
+**Kind**: instance method of [Builder](#markdown-header-new-buildertarget)  
+
+| Param | Type |
+| --- | --- |
+| placeholder | String | 
+
+### builder.build() ⇒ Editor
+Builds the editor based on the specified options.
+
+**Kind**: instance method of [Builder](#markdown-header-new-buildertarget)  
 ## Editor
 **Kind**: global class  
 
@@ -18,7 +60,7 @@ EditorBuilder |
 
 ### new Editor(targetEl, options)
 Constructs an Editor (a thin wrapper around QuillJS)
- Should use the EditorBuilder to construct one of these
+ Should use the Builder to construct one of these
 
 
 | Param | Type | Description |
@@ -46,45 +88,3 @@ See [EventEmitter.once](https://nodejs.org/api/events.html#events_emitter_once_e
 Text change event, fired whenever the contents of the editor have changed
 
 **Kind**: event emitted by [Editor](#markdown-header-new-editortargetel-options)  
-## EditorBuilder
-**Kind**: global class  
-
-* [EditorBuilder](#markdown-header-editorbuilder)
-    * [new EditorBuilder(target)](#markdown-header-new-editorbuildertarget)
-    * [.withDefaultToolbar(toolbarContainer)](#markdown-header-editorbuilderwithdefaulttoolbartoolbarcontainer-this) ⇒ this
-    * [.withPlaceholderText(placeholder)](#markdown-header-editorbuilderwithplaceholdertextplaceholder-this) ⇒ this
-    * [.build()](#markdown-header-editorbuilderbuild-editor) ⇒ Editor
-
-### new EditorBuilder(target)
-A builder that constructs the WYSIWYG editor with a fluent interface;
-Used because QuillJS (v1.0.0) expects all configuration options upfront, but it's nice to avoid
-    having that much complexity in a wrapper constructor
-
-
-| Param | Type | Description |
-| --- | --- | --- |
-| target | String ⎮ HTMLElement | DOM element, (or CSS selector) to hold the editor |
-
-### editorBuilder.withDefaultToolbar(toolbarContainer) ⇒ this
-Adds a default toolbar, with preset options; the default toolbar HTML will be inserted into the
-    specified element and hooked up to the editor
-
-**Kind**: instance method of [EditorBuilder](#markdown-header-new-editorbuildertarget)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| toolbarContainer | String ⎮ HTMLElement | Element or CSS selector to hold the toolbar |
-
-### editorBuilder.withPlaceholderText(placeholder) ⇒ this
-Adds placeholder text to display when the text editor is empty
-
-**Kind**: instance method of [EditorBuilder](#markdown-header-new-editorbuildertarget)  
-
-| Param | Type |
-| --- | --- |
-| placeholder | String | 
-
-### editorBuilder.build() ⇒ Editor
-Builds the editor based on the specified options.
-
-**Kind**: instance method of [EditorBuilder](#markdown-header-new-editorbuildertarget)  

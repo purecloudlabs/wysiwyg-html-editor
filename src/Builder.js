@@ -13,7 +13,7 @@ var DEFAULT_TOOLBAR_HTML = require("./defaultToolbar.html");
  * @constructor
  * @param {String | HTMLElement} target - DOM element, (or CSS selector) to hold the editor
 */
-function EditorBuilder(target) {
+function Builder(target) {
     //Include the necessary CSS files, if it hasn't been included already
     require("quill/dist/quill.css");
 
@@ -33,7 +33,7 @@ function EditorBuilder(target) {
  * @param {String | HTMLElement} toolbarContainer - Element or CSS selector to hold the toolbar
  * @returns {this}
  */
-EditorBuilder.prototype.withDefaultToolbar = function (toolbarContainer) {
+Builder.prototype.withDefaultToolbar = function (toolbarContainer) {
     ///Include the theme style, if it hasn't been included already
     require("quill/dist/quill.snow.css");
 
@@ -67,7 +67,7 @@ EditorBuilder.prototype.withDefaultToolbar = function (toolbarContainer) {
  * @returns {this}
  */
 
-EditorBuilder.prototype.withPlaceholderText = function (placeholder) {
+Builder.prototype.withPlaceholderText = function (placeholder) {
     this.options = _assign(this.options, {
         placeholder: placeholder
     });
@@ -80,8 +80,8 @@ EditorBuilder.prototype.withPlaceholderText = function (placeholder) {
  * @returns {Editor}
  */
 
-EditorBuilder.prototype.build = function () {
+Builder.prototype.build = function () {
     return new Editor(this.target, this.options);
 };
 
-module.exports = EditorBuilder;
+module.exports = Builder;
