@@ -80,6 +80,15 @@ Editor.prototype.getLength = function () {
 };
 
 /**
+ * Returns an object representing the selection state if the editor is focused, otherwise `null`
+ * @param forceFocus if true, the editor will be focused, otherwise it might return `null`
+ * @returns {null | Object} Returned object (if any) has two properties, `index` and `length` indicating the start and length of the selection
+ */
+Editor.prototype.getSelection = function (forceFocus) {
+    return this._quill.getSelection(forceFocus);
+};
+
+/**
  * See [EventEmitter.on](https://nodejs.org/api/events.html#events_emitter_on_eventname_listener)
  */
 

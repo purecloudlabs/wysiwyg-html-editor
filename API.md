@@ -56,6 +56,7 @@ Builds the editor based on the specified options.
     * [.setHTML(html)](#markdown-header-editorsethtmlhtml)
     * [.insertHTML(html, index)](#markdown-header-editorinserthtmlhtml-index)
     * [.getLength()](#markdown-header-editorgetlength-number) ⇒ number
+    * [.getSelection(forceFocus)](#markdown-header-editorgetselectionforcefocus-nullobject) ⇒ null ⎮ Object
     * [.on()](#markdown-header-editoron)
     * [.off()](#markdown-header-editoroff)
     * [.once()](#markdown-header-editoronce)
@@ -107,6 +108,16 @@ editor.insertHTML("HODOR", editor.getLength() - 1);
 Get the length of the Editor text content
 
 **Kind**: instance method of [Editor](#markdown-header-new-editortargetel-options)  
+### editor.getSelection(forceFocus) ⇒ null ⎮ Object
+Returns an object representing the selection state if the editor is focused, otherwise `null`
+
+**Kind**: instance method of [Editor](#markdown-header-new-editortargetel-options)  
+**Returns**: null ⎮ Object - Returned object (if any) has two properties, `index` and `length` indicating the start and length of the selection  
+
+| Param | Description |
+| --- | --- |
+| forceFocus | if true, the editor will be focused, otherwise it might return `null` |
+
 ### editor.on()
 See [EventEmitter.on](https://nodejs.org/api/events.html#events_emitter_on_eventname_listener)
 
