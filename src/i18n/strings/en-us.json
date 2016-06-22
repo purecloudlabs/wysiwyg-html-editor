@@ -1,2 +1,15 @@
 {
+    "bold": "Bold",
+    "italic": "Italic",
+    "underline": "Underline",
+    "strikethrough": "Strikethrough",
+    "fontColor": "Font Color",
+    "highlightColor": "Highlight Color",
+    "quote": "Quote",
+    "codeblock": "Code Block",
+    "link": "Link",
+    "numberedList": "Numbered List",
+    "bulletedList": "Bulleted List",
+    "alignment": "Alignment",
+    "clearFormatting": "Clear Formatting"
 }

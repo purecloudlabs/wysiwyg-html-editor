@@ -2,6 +2,7 @@
 
 var Editor = require("./Editor");
 var _assign = require("lodash/assign");
+var i18n = require("./i18n/i18n");
 
 var DEFAULT_OPTIONS = {};
 var DEFAULT_TOOLBAR_TEMPLATE = require("./templates/defaultToolbar.hbs");
@@ -31,12 +32,12 @@ function Builder(target) {
  * Adds a default toolbar, with preset options; the default toolbar HTML will be inserted into the
  *     specified element and hooked up to the editor
  * @param {String | HTMLElement} toolbarContainer - Element or CSS selector to hold the toolbar
+ * @param {String} locale - The locale, used to translate tooltips for the default toolbar
  * @returns {this}
  */
-Builder.prototype.withDefaultToolbar = function (toolbarContainer) {
+Builder.prototype.withDefaultToolbar = function (toolbarContainer, locale) {
     ///Include the theme style, if it hasn't been included already
     require("quill/dist/quill.snow.css");
-
     if(typeof toolbarContainer === "string") {
         toolbarContainer = document.querySelector(toolbarContainer);
 
@@ -48,7 +49,8 @@ Builder.prototype.withDefaultToolbar = function (toolbarContainer) {
         toolbarContainer = document.createElement("div");
         this.target.parentElement.insertBefore(toolbarContainer, this.target);
     }
-    toolbarContainer.innerHTML = DEFAULT_TOOLBAR_TEMPLATE();
+    i18n.setLocale(locale);
+    toolbarContainer.innerHTML = DEFAULT_TOOLBAR_TEMPLATE({});
 
     this.options = _assign(this.options, {
         theme: "snow",

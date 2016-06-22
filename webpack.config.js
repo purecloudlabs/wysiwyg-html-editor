@@ -9,6 +9,9 @@ module.exports = {
         libraryTarget: "umd",
         library: "HTMLEditor" //The global variable exported by the UMD definition
     },
+    node: {
+        fs: "empty"
+    },
     module: {
         loaders: [
             {

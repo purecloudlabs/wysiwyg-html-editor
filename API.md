@@ -10,7 +10,7 @@ Editor |
 
 * [Builder](#markdown-header-builder)
     * [new Builder(target)](#markdown-header-new-buildertarget)
-    * [.withDefaultToolbar(toolbarContainer)](#markdown-header-builderwithdefaulttoolbartoolbarcontainer-this) ⇒ this
+    * [.withDefaultToolbar(toolbarContainer, locale)](#markdown-header-builderwithdefaulttoolbartoolbarcontainer-locale-this) ⇒ this
     * [.withPlaceholderText(placeholder)](#markdown-header-builderwithplaceholdertextplaceholder-this) ⇒ this
     * [.build()](#markdown-header-builderbuild-editor) ⇒ Editor
 
@@ -24,7 +24,7 @@ Used because QuillJS (v1.0.0) expects all configuration options upfront, but it'
 | --- | --- | --- |
 | target | String ⎮ HTMLElement | DOM element, (or CSS selector) to hold the editor |
 
-### builder.withDefaultToolbar(toolbarContainer) ⇒ this
+### builder.withDefaultToolbar(toolbarContainer, locale) ⇒ this
 Adds a default toolbar, with preset options; the default toolbar HTML will be inserted into the
     specified element and hooked up to the editor
 
@@ -33,6 +33,7 @@ Adds a default toolbar, with preset options; the default toolbar HTML will be in
 | Param | Type | Description |
 | --- | --- | --- |
 | toolbarContainer | String ⎮ HTMLElement | Element or CSS selector to hold the toolbar |
+| locale | String | The locale, used to translate tooltips for the default toolbar |
 
 ### builder.withPlaceholderText(placeholder) ⇒ this
 Adds placeholder text to display when the text editor is empty
