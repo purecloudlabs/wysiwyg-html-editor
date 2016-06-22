@@ -27,7 +27,10 @@ module.exports = {
             },
             {
                 test: /.hbs$/,
-                loader: "handlebars-loader"
+                loader: "handlebars-loader",
+                query: {
+                    helperDirs: __dirname + "/src/templates/helpers" //eslint-disable-line no-undef
+                }
             }
         ]
     }
