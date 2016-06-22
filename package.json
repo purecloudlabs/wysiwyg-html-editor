@@ -14,7 +14,7 @@
     "doc": "node node_modules/jsdoc-to-markdown/bin/cli.js --plugin dmd-bitbucket --src \"src/**/*.js\" > API.md",
     "example": "echo 'Open a browser to localhost:8000/example' && python -m SimpleHTTPServer",
     "pre-push": ". ./githooks/pre-push",
-    "watch": "nodemon --watch src -e js,html --exec \"npm run build\""
+    "watch": "nodemon --watch src -e js,hbs,json --exec \"npm run build\""
   },
   "author": "Interactive Intelligence, Inc.",
   "homepage": "https://bitbucket.org/inindca/wysiwyg-html-editor#readme",
@@ -23,7 +23,7 @@
     "dmd-bitbucket": "^0.1.9",
     "eslint": "^2.10.2",
     "eventemitter3": "^1.2.0",
-    "html-loader": "^0.4.3",
+    "handlebars-loader": "^1.3.0",
     "imports-loader": "^0.6.5",
     "jsdoc-to-markdown": "^1.3.6",
     "json-loader": "^0.5.4",

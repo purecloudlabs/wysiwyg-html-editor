@@ -26,8 +26,8 @@ module.exports = {
                 loader: "style-loader!css-loader"
             },
             {
-                test: /.html$/,
-                loader: "html-loader"
+                test: /.hbs$/,
+                loader: "handlebars-loader"
             }
         ]
     }

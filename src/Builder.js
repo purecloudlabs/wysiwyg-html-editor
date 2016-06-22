@@ -4,7 +4,7 @@ var Editor = require("./Editor");
 var _assign = require("lodash/assign");
 
 var DEFAULT_OPTIONS = {};
-var DEFAULT_TOOLBAR_HTML = require("./defaultToolbar.html");
+var DEFAULT_TOOLBAR_TEMPLATE = require("./templates/defaultToolbar.hbs");
 
 /**
  * A builder that constructs the WYSIWYG editor with a fluent interface;
@@ -48,8 +48,7 @@ Builder.prototype.withDefaultToolbar = function (toolbarContainer) {
         toolbarContainer = document.createElement("div");
         this.target.parentElement.insertBefore(toolbarContainer, this.target);
     }
-
-    toolbarContainer.innerHTML = DEFAULT_TOOLBAR_HTML;
+    toolbarContainer.innerHTML = DEFAULT_TOOLBAR_TEMPLATE();
 
     this.options = _assign(this.options, {
         theme: "snow",
