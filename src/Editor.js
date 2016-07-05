@@ -71,6 +71,14 @@ Editor.prototype.insertHTML = function (html, index) {
 };
 
 /**
+ * Get the contents of the editor with the html stripped out
+ * @returns {String}
+ */
+Editor.prototype.getText = function () {
+    return this._quill.getText();
+};
+
+/**
  * Get the length of the Editor text content
  * @returns {number}
  */
