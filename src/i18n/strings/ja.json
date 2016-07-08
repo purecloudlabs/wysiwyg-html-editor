@@ -1,15 +1,15 @@
 {
-    "bold": "Bold",
-    "italic": "Italic",
-    "underline": "Underline",
-    "strikethrough": "Strikethrough",
-    "fontColor": "Font Color",
-    "highlightColor": "Highlight Color",
-    "quote": "Quote",
-    "codeblock": "Code Block",
-    "link": "Link",
-    "numberedList": "Numbered List",
-    "bulletedList": "Bulleted List",
-    "alignment": "Alignment",
-    "clearFormatting": "Clear Formatting"
+    "bold": "太字",
+    "italic": "斜体",
+    "underline": "下線",
+    "strikethrough": "取り消し線",
+    "fontColor": "フォントの色",
+    "highlightColor": "ハイライト カラー",
+    "quote": "見積もり",
+    "codeblock": "コード ブロック",
+    "link": "リンク",
+    "numberedList": "番号付きリスト",
+    "bulletedList": "箇条書き",
+    "alignment": "配置",
+    "clearFormatting": "書式のクリア"
 }

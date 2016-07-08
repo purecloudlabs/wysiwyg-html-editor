@@ -1,15 +1,15 @@
 {
-    "bold": "Bold",
-    "italic": "Italic",
-    "underline": "Underline",
-    "strikethrough": "Strikethrough",
-    "fontColor": "Font Color",
-    "highlightColor": "Highlight Color",
-    "quote": "Quote",
-    "codeblock": "Code Block",
+    "bold": "Fett",
+    "italic": "Kursiv",
+    "underline": "Unterstrichen",
+    "strikethrough": "Durchgestrichen",
+    "fontColor": "Schriftfarbe",
+    "highlightColor": "Hervorhebungsfarbe",
+    "quote": "Anführungszeichen",
+    "codeblock": "Codeblock",
     "link": "Link",
-    "numberedList": "Numbered List",
-    "bulletedList": "Bulleted List",
-    "alignment": "Alignment",
-    "clearFormatting": "Clear Formatting"
+    "numberedList": "Nummerierte Liste",
+    "bulletedList": "Aufzählung",
+    "alignment": "Ausrichtung",
+    "clearFormatting": "Formatierung löschen"
 }

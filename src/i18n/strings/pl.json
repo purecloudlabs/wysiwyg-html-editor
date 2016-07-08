@@ -1,15 +1,15 @@
 {
-    "bold": "Bold",
-    "italic": "Italic",
-    "underline": "Underline",
-    "strikethrough": "Strikethrough",
-    "fontColor": "Font Color",
-    "highlightColor": "Highlight Color",
-    "quote": "Quote",
-    "codeblock": "Code Block",
-    "link": "Link",
-    "numberedList": "Numbered List",
-    "bulletedList": "Bulleted List",
-    "alignment": "Alignment",
-    "clearFormatting": "Clear Formatting"
+    "bold": "Pogrubienie",
+    "italic": "Kursywa",
+    "underline": "Podkreślenie",
+    "strikethrough": "Przekreślenie",
+    "fontColor": "Kolor czcionki",
+    "highlightColor": "Kolor wyróżnienia",
+    "quote": "Cytat",
+    "codeblock": "Blok kodu",
+    "link": "Łącze",
+    "numberedList": "Lista numerowana",
+    "bulletedList": "Lista punktowana",
+    "alignment": "Wyrównanie",
+    "clearFormatting": "Wyczyść formatowanie"
 }

@@ -1,15 +1,15 @@
 {
-    "bold": "Bold",
-    "italic": "Italic",
-    "underline": "Underline",
-    "strikethrough": "Strikethrough",
-    "fontColor": "Font Color",
-    "highlightColor": "Highlight Color",
-    "quote": "Quote",
-    "codeblock": "Code Block",
-    "link": "Link",
-    "numberedList": "Numbered List",
-    "bulletedList": "Bulleted List",
-    "alignment": "Alignment",
-    "clearFormatting": "Clear Formatting"
+    "bold": "粗体",
+    "italic": "斜体",
+    "underline": "下划线",
+    "strikethrough": "删除线",
+    "fontColor": "字体颜色",
+    "highlightColor": "高亮颜色",
+    "quote": "引用",
+    "codeblock": "代码块",
+    "link": "链接",
+    "numberedList": "已编号列表",
+    "bulletedList": "符号列表",
+    "alignment": "对齐方式​​",
+    "clearFormatting": "清除格式"
 }

@@ -1,15 +1,15 @@
 {
-    "bold": "Bold",
-    "italic": "Italic",
-    "underline": "Underline",
-    "strikethrough": "Strikethrough",
-    "fontColor": "Font Color",
-    "highlightColor": "Highlight Color",
-    "quote": "Quote",
-    "codeblock": "Code Block",
-    "link": "Link",
-    "numberedList": "Numbered List",
-    "bulletedList": "Bulleted List",
-    "alignment": "Alignment",
-    "clearFormatting": "Clear Formatting"
+    "bold": "Fetstil",
+    "italic": "Kursiv",
+    "underline": "Understruken",
+    "strikethrough": "Genomstruken",
+    "fontColor": "Teckenfärg",
+    "highlightColor": "Markeringsfärg",
+    "quote": "Kvot",
+    "codeblock": "Kodblock",
+    "link": "Länk",
+    "numberedList": "Numrerad lista",
+    "bulletedList": "Punktlista",
+    "alignment": "Justering",
+    "clearFormatting": "Rensa formatering"
 }
