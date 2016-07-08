@@ -1,15 +1,15 @@
 {
-    "bold": "Bold",
-    "italic": "Italic",
-    "underline": "Underline",
-    "strikethrough": "Strikethrough",
-    "fontColor": "Font Color",
-    "highlightColor": "Highlight Color",
-    "quote": "Quote",
-    "codeblock": "Code Block",
-    "link": "Link",
-    "numberedList": "Numbered List",
-    "bulletedList": "Bulleted List",
-    "alignment": "Alignment",
-    "clearFormatting": "Clear Formatting"
+    "bold": "굵게",
+    "italic": "기울임꼴",
+    "underline": "밑줄",
+    "strikethrough": "취소선",
+    "fontColor": "글꼴 색",
+    "highlightColor": "강조 색",
+    "quote": "견적",
+    "codeblock": "코드 블록",
+    "link": "링크",
+    "numberedList": "숫자 목록",
+    "bulletedList": "기호 목록",
+    "alignment": "맞춤",
+    "clearFormatting": "형식 초기화"
 }
