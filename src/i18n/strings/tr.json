@@ -1,15 +1,15 @@
 {
-    "bold": "Bold",
-    "italic": "Italic",
-    "underline": "Underline",
-    "strikethrough": "Strikethrough",
-    "fontColor": "Font Color",
-    "highlightColor": "Highlight Color",
-    "quote": "Quote",
-    "codeblock": "Code Block",
-    "link": "Link",
-    "numberedList": "Numbered List",
-    "bulletedList": "Bulleted List",
-    "alignment": "Alignment",
-    "clearFormatting": "Clear Formatting"
+    "bold": "Kalın",
+    "italic": "İtalik",
+    "underline": "Altı Çizili",
+    "strikethrough": "Üstü Çizili",
+    "fontColor": "Yazı Tipi Rengi",
+    "highlightColor": "Vurgu Rengi",
+    "quote": "Teklif",
+    "codeblock": "Kod Bloğu",
+    "link": "Bağlantı",
+    "numberedList": "Numaralı Liste",
+    "bulletedList": "Madde İmli Liste",
+    "alignment": "Hizalama",
+    "clearFormatting": "Biçimlendirmeyi Temizle"
 }
