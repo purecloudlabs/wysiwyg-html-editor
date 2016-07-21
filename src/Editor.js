@@ -88,6 +88,15 @@ Editor.prototype.getLength = function () {
 };
 
 /**
+ * Returns true if the editor is empty
+ * @returns {Boolean}
+ */
+Editor.prototype.isBlank = function () {
+    return this._quill.editor.isBlank();
+};
+
+
+/**
  * Returns an object representing the selection state if the editor is focused, otherwise `null`
  * @param forceFocus if true, the editor will be focused, otherwise it might return `null`
  * @returns {null | Object} Returned object (if any) has two properties, `index` and `length` indicating the start and length of the selection
