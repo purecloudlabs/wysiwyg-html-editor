@@ -58,6 +58,7 @@ Builds the editor based on the specified options.
     * [.insertHTML(html, index)](#markdown-header-editorinserthtmlhtml-index)
     * [.getText()](#markdown-header-editorgettext-string) ⇒ String
     * [.getLength()](#markdown-header-editorgetlength-number) ⇒ number
+    * [.isBlank()](#markdown-header-editorisblank-) ⇒ *
     * [.getSelection(forceFocus)](#markdown-header-editorgetselectionforcefocus-nullobject) ⇒ null ⎮ Object
     * [.on()](#markdown-header-editoron)
     * [.off()](#markdown-header-editoroff)
@@ -112,6 +113,10 @@ Get the contents of the editor with the html stripped out
 **Kind**: instance method of [Editor](#markdown-header-new-editortargetel-options)  
 ### editor.getLength() ⇒ number
 Get the length of the Editor text content
+
+**Kind**: instance method of [Editor](#markdown-header-new-editortargetel-options)  
+### editor.isBlank() ⇒ *
+Returns true if the editor is empty
 
 **Kind**: instance method of [Editor](#markdown-header-new-editortargetel-options)  
 ### editor.getSelection(forceFocus) ⇒ null ⎮ Object
