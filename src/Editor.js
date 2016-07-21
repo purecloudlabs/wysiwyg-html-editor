@@ -89,7 +89,7 @@ Editor.prototype.getLength = function () {
 
 /**
  * Returns true if the editor is empty
- * @returns {*}
+ * @returns {Boolean}
  */
 Editor.prototype.isBlank = function () {
     return this._quill.editor.isBlank();
