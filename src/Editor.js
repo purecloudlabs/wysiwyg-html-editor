@@ -47,6 +47,7 @@ Editor.prototype.getHTML = function() {
  * @param {String} html
  */
 Editor.prototype.setHTML = function(html) {
+    html = html || ""; //Cooerce undefined or null to empty string to prevent error from pasteHTML
     this._quill.pasteHTML(html);
 };
 
