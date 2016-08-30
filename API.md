@@ -56,6 +56,8 @@ Builds the editor based on the specified options.
     * [.getHTML()](#markdown-header-editorgethtml-string) ⇒ String
     * [.setHTML(html)](#markdown-header-editorsethtmlhtml)
     * [.insertHTML(html, index)](#markdown-header-editorinserthtmlhtml-index)
+    * [.importModule(modulePath)](#markdown-header-editorimportmodulemodulepath)
+    * [.registerModule(definition)](#markdown-header-editorregistermoduledefinition)
     * [.insertText(text, name, value, index)](#markdown-header-editorinserttexttext-name-value-index)
     * [.getText()](#markdown-header-editorgettext-string) ⇒ String
     * [.getLength()](#markdown-header-editorgetlength-number) ⇒ number
@@ -108,48 +110,34 @@ editor.insertHTML("HODOR");
 //Inserted at the end of the last line of existing contents (before trailing newline)
 editor.insertHTML("HODOR", editor.getLength() - 1);
 ```
-### editor.insertText(text, name, value, index)
-Inserts text with an optional formatting parameter into the Editor.  This is useful when creating spans or other blots
-that have a specific purpose such as replacement placeholder elements.
-
-To use create the format class by extending an existing format class such as Inline for inline formats.
+### editor.importModule(modulePath)
+Method for retrieving the registered module within Quill that is represented by the modulePath string
 
 **Kind**: instance method of [Editor](#markdown-header-new-editortargetel-options)  
-**Example:**: ```
-  "use strict";
 
- var Quill = require("quill");
- var Inline = Quill.import("blots/inline");
+| Param |
+| --- |
+| modulePath | 
 
- class Placeholder extends Inline {
-    static create(value) {
-        var node = super.create(value);
-        node.setAttribute("data-placeholder", "true");
-        return node;
-    }
+### editor.registerModule(definition)
+Method for adding extensions to the quill editor from the outside
 
-    static formats() {
-        return true;
-    }
-}
- Placeholder.className = "placeholder";
- Placeholder.tagName = "SPAN";
- Placeholder.blotName = "placeholder";
+**Kind**: instance method of [Editor](#markdown-header-new-editortargetel-options)  
 
- module.exports = Placeholder;
+| Param |
+| --- |
+| definition | 
 
- ```
-Register the element with the Quill static repository
+### editor.insertText(text, name, value, index)
+Inserts text with an optional formatting parameter into the Editor.  This is useful when creating spans or other blots
+that have a specific purpose and formatting
 
-```
-  Quill.register({"formats/placeholder": Placeholder});
-```
-Then when adding text that should be wrapped in this custom style element do so like
  ```
  editor.insertText("COMPANY_NAME", "placeholder", true, editor.getSelection(true).index);
  ```
-This will wrap the string in inputString in the tag and style/attribute specified in the placeholder blot  
-**See**: src/formats/placeholder.js for more information
+This will wrap the string in inputString in the tag and style/attribute specified in the placeholder blot
+
+**Kind**: instance method of [Editor](#markdown-header-new-editortargetel-options)  
 
 | Param | Description |
 | --- | --- |

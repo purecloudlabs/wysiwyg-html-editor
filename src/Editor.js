@@ -2,8 +2,6 @@
 
 var Quill = require("quill");
 var EventEmitter = require("eventemitter3");
-var Placeholder = require("./formats/placeholder");
-var Inline = Quill.import("blots/inline");
 
 /**
  *  Constructs an Editor (a thin wrapper around QuillJS)
@@ -14,8 +12,6 @@ var Inline = Quill.import("blots/inline");
  */
 
 function Editor(targetEl, options) {
-    Quill.register({"formats/placeholder": Placeholder});
-
     var quill = new Quill(targetEl, options);
     var emitter = new EventEmitter();
 
@@ -76,42 +72,25 @@ Editor.prototype.insertHTML = function (html, index) {
 };
 
 /**
+ * Method for retrieving the registered module within Quill that is represented by the modulePath string
+ * @param modulePath
+ */
+Editor.prototype.importModule = function (modulePath) {
+    return Quill.import(modulePath);
+};
+
+/**
+ * Method for adding extensions to the quill editor from the outside
+ * @param definition
+ */
+Editor.prototype.registerModule = function (definition) {
+    Quill.register(definition);
+};
+
+/**
  * Inserts text with an optional formatting parameter into the Editor.  This is useful when creating spans or other blots
- * that have a specific purpose such as replacement placeholder elements.
+ * that have a specific purpose and formatting
  *
- * To use create the format class by extending an existing format class such as Inline for inline formats.
- * @see src/formats/placeholder.js for more information
- * @example:
- ```
-  "use strict";
-
- var Quill = require("quill");
- var Inline = Quill.import("blots/inline");
-
- class Placeholder extends Inline {
-    static create(value) {
-        var node = super.create(value);
-        node.setAttribute("data-placeholder", "true");
-        return node;
-    }
-
-    static formats() {
-        return true;
-    }
-}
- Placeholder.className = "placeholder";
- Placeholder.tagName = "SPAN";
- Placeholder.blotName = "placeholder";
-
- module.exports = Placeholder;
-
- ```
- * Register the element with the Quill static repository
- *
-```
-  Quill.register({"formats/placeholder": Placeholder});
-```
- * Then when adding text that should be wrapped in this custom style element do so like
  ```
  editor.insertText("COMPANY_NAME", "placeholder", true, editor.getSelection(true).index);
  ```
