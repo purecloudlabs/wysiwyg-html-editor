@@ -76,11 +76,51 @@ Editor.prototype.insertHTML = function (html, index) {
 };
 
 /**
- * Inserts text with an optional formatting parameter into the Editor
- * @param text
- * @param name
- * @param value
- * @param index
+ * Inserts text with an optional formatting parameter into the Editor.  This is useful when creating spans or other blots
+ * that have a specific purpose such as replacement placeholder elements.
+ *
+ * To use create the format class by extending an existing format class such as Inline for inline formats.
+ * @see src/formats/placeholder.js for more information
+ * @example:
+ ```
+  "use strict";
+
+ var Quill = require("quill");
+ var Inline = Quill.import("blots/inline");
+
+ class Placeholder extends Inline {
+    static create(value) {
+        var node = super.create(value);
+        node.setAttribute("data-placeholder", "true");
+        return node;
+    }
+
+    static formats() {
+        return true;
+    }
+}
+ Placeholder.className = "place-holder";
+ Placeholder.tagName = "SPAN";
+ Placeholder.blotName = "placeholder";
+
+ module.exports = Placeholder;
+
+ ```
+ * Register the element with the Quill static repository
+ *
+```
+  Quill.register({"formats/placeholder": Placeholder});
+```
+ * Then when addind text that should be wrapped in this custom style element do so like
+ ```
+ editor.insertText(inputString, "placeholder", true, editor.getSelection(true).index);
+ ```
+ * This will wrap the string in inputString in the tag and style/attribute specified in the placeholder blot
+ *
+ * @param text The String to be wrapped by the custom wrapper
+ * @param name The name of the blot to use for wrapping the text in the first parameter.  This can be an array of styles as well as a single blot name
+ * @param value If true and the format is a simple one like bold - this wraps the bold blot around the text.  If the format it more complicated an array of specifications for each format can be included
+ * @param index the point at which the formatting wrapped text should be inserted.
  */
 Editor.prototype.insertText = function (text, name, value, index) {
     if(!index && index !== 0) {
