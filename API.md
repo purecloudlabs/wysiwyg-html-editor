@@ -56,8 +56,6 @@ Builds the editor based on the specified options.
     * [.getHTML()](#markdown-header-editorgethtml-string) ⇒ String
     * [.setHTML(html)](#markdown-header-editorsethtmlhtml)
     * [.insertHTML(html, index)](#markdown-header-editorinserthtmlhtml-index)
-    * [.importModule(modulePath)](#markdown-header-editorimportmodulemodulepath)
-    * [.registerModule(definition)](#markdown-header-editorregistermoduledefinition)
     * [.insertText(text, name, index)](#markdown-header-editorinserttexttext-name-index)
     * [.getText()](#markdown-header-editorgettext-string) ⇒ String
     * [.getLength()](#markdown-header-editorgetlength-number) ⇒ number
@@ -110,24 +108,6 @@ editor.insertHTML("HODOR");
 //Inserted at the end of the last line of existing contents (before trailing newline)
 editor.insertHTML("HODOR", editor.getLength() - 1);
 ```
-### editor.importModule(modulePath)
-Method for retrieving the registered module within Quill that is represented by the modulePath string
-
-**Kind**: instance method of [Editor](#markdown-header-new-editortargetel-options)  
-
-| Param |
-| --- |
-| modulePath | 
-
-### editor.registerModule(definition)
-Method for adding extensions to the quill editor from the outside
-
-**Kind**: instance method of [Editor](#markdown-header-new-editortargetel-options)  
-
-| Param |
-| --- |
-| definition | 
-
 ### editor.insertText(text, name, index)
 Inserts text with an optional formatting parameter into the Editor.  This is useful when creating spans or other blots
 that have a specific purpose and formatting

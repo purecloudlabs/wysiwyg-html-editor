@@ -72,22 +72,6 @@ Editor.prototype.insertHTML = function (html, index) {
 };
 
 /**
- * Method for retrieving the registered module within Quill that is represented by the modulePath string
- * @param modulePath
- */
-Editor.prototype.importModule = function (modulePath) {
-    return Quill.import(modulePath);
-};
-
-/**
- * Method for adding extensions to the quill editor from the outside
- * @param definition
- */
-Editor.prototype.registerModule = function (definition) {
-    Quill.register(definition);
-};
-
-/**
  * Inserts text with an optional formatting parameter into the Editor.  This is useful when creating spans or other blots
  * that have a specific purpose and formatting
  *
