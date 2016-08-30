@@ -3,6 +3,24 @@
 var Quill = require("quill");
 var EventEmitter = require("eventemitter3");
 
+
+var Inline = Quill.import("blots/inline");
+
+class Placeholder extends Inline {
+    static create(value) {
+        var node = super.create(value);
+        node.setAttribute("data-placeholder", "true");
+        return node;
+    }
+
+    static formats() {
+        return true;
+    }
+}
+Placeholder.className = "place-holder";
+Placeholder.tagName = "SPAN";
+Placeholder.blotName = "placeholder";
+
 /**
  *  Constructs an Editor (a thin wrapper around QuillJS)
  *  Should use the Builder to construct one of these
@@ -12,6 +30,8 @@ var EventEmitter = require("eventemitter3");
  */
 
 function Editor(targetEl, options) {
+    Quill.register({"formats/placeholder": Placeholder});
+
     var quill = new Quill(targetEl, options);
     var emitter = new EventEmitter();
 
@@ -69,6 +89,20 @@ Editor.prototype.insertHTML = function (html, index) {
         index = this.getLength();
     }
     this._quill.pasteHTML(index, html);
+};
+
+/**
+ * Inserts text with an optional formatting parameter into the Editor
+ * @param text
+ * @param name
+ * @param value
+ * @param index
+ */
+Editor.prototype.insertText = function (text, name, value, index) {
+    if(!index && index !== 0) {
+        index = this.getLength();
+    }
+    this._quill.insertText(index, text, name, value);
 };
 
 /**

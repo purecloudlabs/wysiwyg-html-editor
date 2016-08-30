@@ -5,11 +5,47 @@
         <title></title>
         <script src="../lib.js"></script>
     </head>
+    <style>
+        body {
+            background-color: #fefefe;
+        }
+
+        .editor {
+            background-color: white;
+        }
+        .place-holder {
+            color: #ff9900;
+        }
+        .place-holder:before {
+            content: " ";
+        }
+        .place-holder:after {
+            content: " "
+        }
+        .placeholder-insert-area {
+            padding: 20px;
+            position:absolute;
+            top: 0;
+            right: 0;
+        }
+        .insertion-text {
+            margin-right: 20px;
+            width: 350px;
+        }
+        .insert-placeholder {
+            width: 120px;
+        }
+
+    </style>
     <body>
         <div id="toolbar"></div>
         <div id="editor">
             This is a WYSIWYG Editor
         </div>
+        <span class="placeholder-insert-area" >
+            <input type="text" class="insertion-text" />
+            <button class="insert-placeholder" >Add Placeholder</button>
+        </span>
         <br />
         <pre id="output-text" style="background-color:beige; border: 1px solid black; white-space: pre-wrap"></pre>
         <div id="output-html"></div>
@@ -26,6 +62,16 @@
                 outputHTML.innerHTML = editor.getHTML();
             }
             editor.on("text-change", updateOutput);
+
+            var insertButton = document.querySelectorAll(".insert-placeholder")[0];
+            var inputText = document.querySelectorAll(".insertion-text")[0];
+
+            insertButton.addEventListener("click", function () {
+                var inputString = inputText.value;
+                inputText.value = "";
+                editor.insertText(inputString, "placeholder", true, editor.getSelection(true).index);
+            });
+
             updateOutput();
         </script>
     </body>
