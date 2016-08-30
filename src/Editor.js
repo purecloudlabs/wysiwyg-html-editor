@@ -2,24 +2,8 @@
 
 var Quill = require("quill");
 var EventEmitter = require("eventemitter3");
-
-
+var Placeholder = require("./formats/placeholder");
 var Inline = Quill.import("blots/inline");
-
-class Placeholder extends Inline {
-    static create(value) {
-        var node = super.create(value);
-        node.setAttribute("data-placeholder", "true");
-        return node;
-    }
-
-    static formats() {
-        return true;
-    }
-}
-Placeholder.className = "place-holder";
-Placeholder.tagName = "SPAN";
-Placeholder.blotName = "placeholder";
 
 /**
  *  Constructs an Editor (a thin wrapper around QuillJS)

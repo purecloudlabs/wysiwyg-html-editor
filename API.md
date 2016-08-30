@@ -56,6 +56,7 @@ Builds the editor based on the specified options.
     * [.getHTML()](#markdown-header-editorgethtml-string) ⇒ String
     * [.setHTML(html)](#markdown-header-editorsethtmlhtml)
     * [.insertHTML(html, index)](#markdown-header-editorinserthtmlhtml-index)
+    * [.insertText(text, name, value, index)](#markdown-header-editorinserttexttext-name-value-index)
     * [.getText()](#markdown-header-editorgettext-string) ⇒ String
     * [.getLength()](#markdown-header-editorgetlength-number) ⇒ number
     * [.isBlank()](#markdown-header-editorisblank-boolean) ⇒ Boolean
@@ -107,6 +108,18 @@ editor.insertHTML("HODOR");
 //Inserted at the end of the last line of existing contents (before trailing newline)
 editor.insertHTML("HODOR", editor.getLength() - 1);
 ```
+### editor.insertText(text, name, value, index)
+Inserts text with an optional formatting parameter into the Editor
+
+**Kind**: instance method of [Editor](#markdown-header-new-editortargetel-options)  
+
+| Param |
+| --- |
+| text | 
+| name | 
+| value | 
+| index | 
+
 ### editor.getText() ⇒ String
 Get the contents of the editor with the html stripped out
 
