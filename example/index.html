@@ -55,7 +55,7 @@
                 .withDefaultToolbar("#toolbar", "en-us")
                 .build();
 
-            var Inline = editor.importModule("blots/inline");
+            var Inline = HTMLEditor._Quill.import("blots/inline");
 
             class Placeholder extends Inline {
                 static create(value) {
@@ -72,7 +72,7 @@
             Placeholder.tagName = "SPAN";
             Placeholder.blotName = "placeholder";
 
-            editor.registerModule({"formats/placeholder": Placeholder});
+            HTMLEditor._Quill.register({"formats/placeholder": Placeholder});
 
             var outputText = document.getElementById("output-text");
             var outputHTML = document.getElementById("output-html");
