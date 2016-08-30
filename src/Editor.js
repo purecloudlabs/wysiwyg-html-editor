@@ -72,6 +72,44 @@ Editor.prototype.insertHTML = function (html, index) {
 };
 
 /**
+ * Method for retrieving the registered module within Quill that is represented by the modulePath string
+ * @param modulePath
+ */
+Editor.prototype.importModule = function (modulePath) {
+    return Quill.import(modulePath);
+};
+
+/**
+ * Method for adding extensions to the quill editor from the outside
+ * @param definition
+ */
+Editor.prototype.registerModule = function (definition) {
+    Quill.register(definition);
+};
+
+/**
+ * Inserts text with an optional formatting parameter into the Editor.  This is useful when creating spans or other blots
+ * that have a specific purpose and formatting
+ *
+ ```
+ editor.insertText("COMPANY_NAME", "placeholder", editor.getSelection(true).index);
+ ```
+ * This will wrap the string in inputString in the tag and style/attribute specified in the placeholder blot
+ * see: http://quilljs.com/docs/api/#content
+ *
+ * @param text The String to be wrapped by the custom wrapper
+ * @param name The name of the blot or object with formats to use for wrapping the text in the first parameter.
+ * @param index the point at which the formatting wrapped text should be inserted.
+ */
+Editor.prototype.insertText = function (text, name, index) {
+    if (!index && index !== 0) {
+        index = this.getLength();
+    }
+
+    this._quill.insertText(index, text, name, true);
+};
+
+/**
  * Get the contents of the editor with the html stripped out
  * @returns {String}
  */
