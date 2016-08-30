@@ -95,17 +95,18 @@ Editor.prototype.registerModule = function (definition) {
  editor.insertText("COMPANY_NAME", "placeholder", true, editor.getSelection(true).index);
  ```
  * This will wrap the string in inputString in the tag and style/attribute specified in the placeholder blot
+ * see: http://quilljs.com/docs/api/#content
  *
  * @param text The String to be wrapped by the custom wrapper
- * @param name The name of the blot to use for wrapping the text in the first parameter.  This can be an array of styles as well as a single blot name
- * @param value If true and the format is a simple one like bold - this wraps the bold blot around the text.  If the format it more complicated an array of specifications for each format can be included
+ * @param name The name of the blot or object with formats to use for wrapping the text in the first parameter.
  * @param index the point at which the formatting wrapped text should be inserted.
  */
-Editor.prototype.insertText = function (text, name, value, index) {
-    if(!index && index !== 0) {
+Editor.prototype.insertText = function (text, name, index) {
+    if (!index && index !== 0) {
         index = this.getLength();
     }
-    this._quill.insertText(index, text, name, value);
+
+    this._quill.insertText(index, text, name, true);
 };
 
 /**

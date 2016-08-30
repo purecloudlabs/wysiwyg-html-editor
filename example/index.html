@@ -88,7 +88,7 @@
             insertButton.addEventListener("click", function () {
                 var inputString = inputText.value;
                 inputText.value = "";
-                editor.insertText(inputString, "placeholder", true, editor.getSelection(true).index);
+                editor.insertText(inputString, "placeholder", editor.getSelection(true).index);
             });
 
             updateOutput();
