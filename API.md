@@ -132,7 +132,7 @@ To use create the format class by extending an existing format class such as Inl
         return true;
     }
 }
- Placeholder.className = "place-holder";
+ Placeholder.className = "placeholder";
  Placeholder.tagName = "SPAN";
  Placeholder.blotName = "placeholder";
 

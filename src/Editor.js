@@ -99,7 +99,7 @@ Editor.prototype.insertHTML = function (html, index) {
         return true;
     }
 }
- Placeholder.className = "place-holder";
+ Placeholder.className = "placeholder";
  Placeholder.tagName = "SPAN";
  Placeholder.blotName = "placeholder";
 

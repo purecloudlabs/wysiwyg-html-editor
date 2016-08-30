@@ -20,7 +20,7 @@
         return true;
     }
 }
- Placeholder.className = "place-holder";
+ Placeholder.className = "placeholder";
  Placeholder.tagName = "SPAN";
  Placeholder.blotName = "placeholder";
 
@@ -68,7 +68,7 @@ var Placeholder = function (_Inline) {
     return Placeholder;
 }(Inline);
 
-Placeholder.className = "place-holder";
+Placeholder.className = "placeholder";
 Placeholder.tagName = "SPAN";
 Placeholder.blotName = "placeholder";
 
