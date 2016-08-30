@@ -92,7 +92,7 @@ Editor.prototype.registerModule = function (definition) {
  * that have a specific purpose and formatting
  *
  ```
- editor.insertText("COMPANY_NAME", "placeholder", true, editor.getSelection(true).index);
+ editor.insertText("COMPANY_NAME", "placeholder", editor.getSelection(true).index);
  ```
  * This will wrap the string in inputString in the tag and style/attribute specified in the placeholder blot
  * see: http://quilljs.com/docs/api/#content
