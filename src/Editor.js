@@ -111,9 +111,9 @@ Editor.prototype.insertHTML = function (html, index) {
 ```
   Quill.register({"formats/placeholder": Placeholder});
 ```
- * Then when addind text that should be wrapped in this custom style element do so like
+ * Then when adding text that should be wrapped in this custom style element do so like
  ```
- editor.insertText(inputString, "placeholder", true, editor.getSelection(true).index);
+ editor.insertText("COMPANY_NAME", "placeholder", true, editor.getSelection(true).index);
  ```
  * This will wrap the string in inputString in the tag and style/attribute specified in the placeholder blot
  *
