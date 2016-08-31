@@ -14,6 +14,7 @@
     "check-build": ". ./scripts/check-build",
     "doc": "node node_modules/jsdoc-to-markdown/bin/cli.js --plugin dmd-bitbucket --src \"src/**/*.js\" > API.md",
     "example": "echo 'Open a browser to localhost:8000/example' && python -m SimpleHTTPServer",
+    "lint": "node_modules/eslint/bin/eslint.js .",
     "watch": "nodemon --watch src -e js,hbs,json --exec \"webpack --config webpack.config.js\""
   },
   "author": "Interactive Intelligence, Inc.",
@@ -33,6 +34,7 @@
     "style-loader": "^0.13.1"
   },
   "pre-push": [
-    "check-build"
+    "check-build",
+    "lint"
   ]
 }
