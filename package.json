@@ -10,12 +10,12 @@
   },
   "scripts": {
     "build": "npm run bundle && npm run doc",
-    "bundle": "webpack -p --config webpack.config.js",
+    "bundle": "node_modules/webpack/bin/webpack.js -p",
     "check-build": ". ./scripts/check-build",
     "doc": "node node_modules/jsdoc-to-markdown/bin/cli.js --plugin dmd-bitbucket --src \"src/**/*.js\" > API.md",
     "example": "echo 'Open a browser to localhost:8000/example' && python -m SimpleHTTPServer",
     "lint": "node_modules/eslint/bin/eslint.js .",
-    "watch": "nodemon --watch src -e js,hbs,json --exec \"webpack --config webpack.config.js\""
+    "watch": "nodemon --watch src -e js,hbs,json --exec \"node_modules/webpack/bin/webpack.js\""
   },
   "author": "Interactive Intelligence, Inc.",
   "homepage": "https://bitbucket.org/inindca/wysiwyg-html-editor#readme",
@@ -34,7 +34,8 @@
     "lodash": "^4.13.1",
     "pre-push": "^0.1.1",
     "quill": "^1.0.0-beta.2",
-    "style-loader": "^0.13.1"
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.2"
   },
   "pre-push": [
     "check-build",
