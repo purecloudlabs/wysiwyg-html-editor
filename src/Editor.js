@@ -52,6 +52,13 @@ Editor.prototype.setHTML = function(html) {
 };
 
 /**
+ * Removes formatting from a beginning at an index
+ */
+Editor.prototype.removeFormat = function (index, length) {
+    this._quill.removeFormat(index, length);
+};
+
+/**
  * Inserts html into the editor
  * @param {String} html
  * @param {number} index - the index (based on text content) to insert the html;
@@ -65,7 +72,7 @@ Editor.prototype.setHTML = function(html) {
  * editor.insertHTML("HODOR", editor.getLength() - 1);
  */
 Editor.prototype.insertHTML = function (html, index) {
-    if(!index && index !== 0) {
+    if (!index && index !== 0) {
         index = this.getLength();
     }
     this._quill.pasteHTML(index, html);
@@ -94,6 +101,15 @@ Editor.prototype.insertText = function (text, name, index) {
 };
 
 /**
+ * Deletes text from the editor based on the passed in index and length
+ * @param index start index
+ * @param length length of deletion
+ */
+Editor.prototype.deleteText = function (index, length) {
+    this._quill.deleteText(index, length);
+};
+
+/**
  * Get the contents of the editor with the html stripped out
  * @returns {String}
  */
@@ -118,7 +134,6 @@ Editor.prototype.isBlank = function () {
     return this._quill.editor.isBlank();
 };
 
-
 /**
  * Returns an object representing the selection state if the editor is focused, otherwise `null`
  * @param forceFocus if true, the editor will be focused, otherwise it might return `null`
@@ -126,6 +141,16 @@ Editor.prototype.isBlank = function () {
  */
 Editor.prototype.getSelection = function (forceFocus) {
     return this._quill.getSelection(forceFocus);
+};
+
+/**
+ * Set the selection to the index and through the length specified
+ * @param index the beginning index of the selection
+ * @param length the length of the selection range
+ * @returns {*}
+ */
+Editor.prototype.setSelection = function (index, length) {
+    return this._quill.setSelection(index, length);
 };
 
 /**

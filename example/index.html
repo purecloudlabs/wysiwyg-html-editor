@@ -16,12 +16,6 @@
         .placeholder {
             color: #ff9900;
         }
-        .placeholder:before {
-            content: " ";
-        }
-        .placeholder:after {
-            content: " "
-        }
         .placeholder-insert-area {
             padding: 20px;
             position:absolute;
@@ -43,7 +37,7 @@
             This is a WYSIWYG Editor
         </div>
         <span class="placeholder-insert-area" >
-            <input type="text" class="insertion-text" />
+            <input type="text" class="insertion-text" value="COMPANY_NAME" />
             <button class="insert-placeholder" >Add Placeholder</button>
         </span>
         <br />
@@ -86,9 +80,23 @@
             var inputText = document.querySelectorAll(".insertion-text")[0];
 
             insertButton.addEventListener("click", function () {
-                var inputString = inputText.value;
+                let inputString = inputText.value;
                 inputText.value = "";
-                editor.insertText(inputString, "placeholder", editor.getSelection(true).index);
+
+                var range = editor.getSelection(true);
+                if (range) {
+                    let insertionSpacer = range.length > 0 ? '' : " ";
+                    let insertion = inputString + insertionSpacer;
+                    let macroEndIndex = range.index + inputString.length;
+
+                    editor.deleteText(range.index, range.length);
+                    editor.insertText(insertion, "placeholder", range.index);
+                    editor.removeFormat(macroEndIndex, 1);
+
+                    setTimeout(function () {
+                        editor.setSelection(macroEndIndex + 1);
+                    }, 100);
+                }
             });
 
             updateOutput();

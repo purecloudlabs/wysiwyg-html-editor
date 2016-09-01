@@ -55,12 +55,15 @@ Builds the editor based on the specified options.
     * [new Editor(targetEl, options)](#markdown-header-new-editortargetel-options)
     * [.getHTML()](#markdown-header-editorgethtml-string) ⇒ String
     * [.setHTML(html)](#markdown-header-editorsethtmlhtml)
+    * [.removeFormat()](#markdown-header-editorremoveformat)
     * [.insertHTML(html, index)](#markdown-header-editorinserthtmlhtml-index)
     * [.insertText(text, name, index)](#markdown-header-editorinserttexttext-name-index)
+    * [.deleteText(index, length)](#markdown-header-editordeletetextindex-length)
     * [.getText()](#markdown-header-editorgettext-string) ⇒ String
     * [.getLength()](#markdown-header-editorgetlength-number) ⇒ number
     * [.isBlank()](#markdown-header-editorisblank-boolean) ⇒ Boolean
     * [.getSelection(forceFocus)](#markdown-header-editorgetselectionforcefocus-nullobject) ⇒ null ⎮ Object
+    * [.setSelection(index, length)](#markdown-header-editorsetselectionindex-length-) ⇒ *
     * [.on()](#markdown-header-editoron)
     * [.off()](#markdown-header-editoroff)
     * [.once()](#markdown-header-editoronce)
@@ -89,6 +92,10 @@ Replaces the contents of the editor with specified html
 | --- | --- |
 | html | String | 
 
+### editor.removeFormat()
+Removes formatting from a beginning at an index
+
+**Kind**: instance method of [Editor](#markdown-header-new-editortargetel-options)  
 ### editor.insertHTML(html, index)
 Inserts html into the editor
 
@@ -126,6 +133,16 @@ see: http://quilljs.com/docs/api/#content
 | name | The name of the blot or object with formats to use for wrapping the text in the first parameter. |
 | index | the point at which the formatting wrapped text should be inserted. |
 
+### editor.deleteText(index, length)
+Deletes text from the editor based on the passed in index and length
+
+**Kind**: instance method of [Editor](#markdown-header-new-editortargetel-options)  
+
+| Param | Description |
+| --- | --- |
+| index | start index |
+| length | length of deletion |
+
 ### editor.getText() ⇒ String
 Get the contents of the editor with the html stripped out
 
@@ -147,6 +164,16 @@ Returns an object representing the selection state if the editor is focused, oth
 | Param | Description |
 | --- | --- |
 | forceFocus | if true, the editor will be focused, otherwise it might return `null` |
+
+### editor.setSelection(index, length) ⇒ *
+Set the selection to the index and through the length specified
+
+**Kind**: instance method of [Editor](#markdown-header-new-editortargetel-options)  
+
+| Param | Description |
+| --- | --- |
+| index | the beginning index of the selection |
+| length | the length of the selection range |
 
 ### editor.on()
 See [EventEmitter.on](https://nodejs.org/api/events.html#events_emitter_on_eventname_listener)
