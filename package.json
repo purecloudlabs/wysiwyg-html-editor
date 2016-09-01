@@ -20,6 +20,9 @@
   "author": "Interactive Intelligence, Inc.",
   "homepage": "https://bitbucket.org/inindca/wysiwyg-html-editor#readme",
   "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.14.0",
     "css-loader": "^0.23.1",
     "dmd-bitbucket": "^0.1.9",
     "eslint": "^3.4.0",
