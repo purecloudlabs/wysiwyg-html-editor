@@ -35,7 +35,15 @@ module.exports = {
                 query: {
                     helperDirs: __dirname + "/src/templates/helpers" //eslint-disable-line no-undef
                 }
-            }
+            },
+            {
+                test: /\.js$/,
+                exclude: /(node_modules|bower_components)/,
+                loader: 'babel',
+                query: {
+                    compact: false //Not necessary, and turning this off eliminates some build noise
+                }
+            },
         ]
     }
 };

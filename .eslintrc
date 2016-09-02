@@ -22,6 +22,7 @@
         "no-return-assign": 2,
         "no-self-compare": 2,
         "no-throw-literal": 2,
+        "no-var": 2,
         "no-void": 2,
         "no-with": 2,
         "no-unused-vars": [
@@ -31,11 +32,15 @@
                 #Unused args should begin and end with an underscore
                 "argsIgnorePattern": "(^.+_$)",
             }
-        ]
+        ],
+        "prefer-const": 2
     },
     "env": {
         "commonjs": true,
         "browser": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 6
     },
     "extends": "eslint:recommended"
 }

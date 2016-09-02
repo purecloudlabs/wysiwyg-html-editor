@@ -1,7 +1,7 @@
 "use strict";
 
-var Quill = require("quill");
-var EventEmitter = require("eventemitter3");
+const Quill = require("quill");
+const EventEmitter = require("eventemitter3");
 
 /**
  *  Constructs an Editor (a thin wrapper around QuillJS)
@@ -12,8 +12,8 @@ var EventEmitter = require("eventemitter3");
  */
 
 function Editor(targetEl, options) {
-    var quill = new Quill(targetEl, options);
-    var emitter = new EventEmitter();
+    const quill = new Quill(targetEl, options);
+    const emitter = new EventEmitter();
 
     this.targetEl = targetEl;
     this._quill = quill;
@@ -35,7 +35,7 @@ function Editor(targetEl, options) {
  *
  */
 Editor.prototype.getHTML = function() {
-    var editorContentDiv = this.targetEl.querySelector(".ql-editor");
+    const editorContentDiv = this.targetEl.querySelector(".ql-editor");
     if(!editorContentDiv) {
         throw new Error("Couldn't find editor contents");
     }

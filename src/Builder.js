@@ -1,11 +1,11 @@
 "use strict";
 
-var Editor = require("./Editor");
-var _assign = require("lodash/assign");
-var i18n = require("./i18n/i18n");
+const Editor = require("./Editor");
+const _assign = require("lodash/assign");
+const i18n = require("./i18n/i18n");
 
-var DEFAULT_OPTIONS = {};
-var DEFAULT_TOOLBAR_TEMPLATE = require("./templates/defaultToolbar.hbs");
+const DEFAULT_OPTIONS = {};
+const DEFAULT_TOOLBAR_TEMPLATE = require("./templates/defaultToolbar.hbs");
 
 /**
  * A builder that constructs the WYSIWYG editor with a fluent interface;

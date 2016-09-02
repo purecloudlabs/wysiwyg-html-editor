@@ -10,18 +10,22 @@
   },
   "scripts": {
     "build": "npm run bundle && npm run doc",
-    "bundle": "webpack -p --config webpack.config.js",
+    "bundle": "node_modules/webpack/bin/webpack.js -p",
+    "check-build": ". ./scripts/check-build",
     "doc": "node node_modules/jsdoc-to-markdown/bin/cli.js --plugin dmd-bitbucket --src \"src/**/*.js\" > API.md",
     "example": "echo 'Open a browser to localhost:8000/example' && python -m SimpleHTTPServer",
-    "pre-push": ". ./githooks/pre-push",
-    "watch": "nodemon --watch src -e js,hbs,json --exec \"webpack --config webpack.config.js\""
+    "lint": "node_modules/eslint/bin/eslint.js .",
+    "watch": "nodemon --watch src -e js,hbs,json --exec \"node_modules/webpack/bin/webpack.js\""
   },
   "author": "Interactive Intelligence, Inc.",
   "homepage": "https://bitbucket.org/inindca/wysiwyg-html-editor#readme",
   "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.14.0",
     "css-loader": "^0.23.1",
     "dmd-bitbucket": "^0.1.9",
-    "eslint": "^2.10.2",
+    "eslint": "^3.4.0",
     "eventemitter3": "^1.2.0",
     "handlebars-loader": "^1.3.0",
     "imports-loader": "^0.6.5",
@@ -30,9 +34,11 @@
     "lodash": "^4.13.1",
     "pre-push": "^0.1.1",
     "quill": "^1.0.0-beta.2",
-    "style-loader": "^0.13.1"
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.2"
   },
   "pre-push": [
-    "pre-push"
+    "check-build",
+    "lint"
   ]
 }

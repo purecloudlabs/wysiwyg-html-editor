@@ -1,10 +1,10 @@
 "use strict";
 
-var englishDictionary = require("./strings/en-us.json");
+const englishDictionary = require("./strings/en-us.json");
 
-var dictionary = englishDictionary;
+let dictionary = englishDictionary;
 
-var i18n = {
+const i18n = {
     setLocale: function (locale) {
         try {
             dictionary = require("./strings/" + locale + ".json");
