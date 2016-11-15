@@ -6,6 +6,8 @@ The primary purpose of the wrapper is to allow the behavior of the wysiwyg edito
 
 A secondary purpose is to make it more feasible to swap out implementations under-the-hood with minimal downstream changes.
 
+[Changelog](CHANGELOG.md)
+
 ### Usage ###
 
 The library uses the [UMD pattern](https://github.com/umdjs/umd); if using the global variable form it exports a `window.HTMLEditor` global.
