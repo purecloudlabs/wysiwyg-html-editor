@@ -24,8 +24,9 @@ function Builder(target) {
     if(!target) {
         throw new Error("Need a target element or selector for the editor");
     }
+
     this.target = target;
-    this.options = _assign({}, DEFAULT_OPTIONS);
+    this.options = _assign({bounds: target}, DEFAULT_OPTIONS);
 }
 
 /**
@@ -53,7 +54,6 @@ Builder.prototype.withDefaultToolbar = function (toolbarContainer, locale) {
     toolbarContainer.innerHTML = DEFAULT_TOOLBAR_TEMPLATE({});
 
     this.options = _assign(this.options, {
-        bounds: document.body,
         theme: "snow",
         modules: {
             toolbar: toolbarContainer
