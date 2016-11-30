@@ -29,19 +29,15 @@ function Editor(targetEl, options) {
     });
 
     // Override the default link tooltip logic to prepend `https://`
-    // NOTE: this might break with the migration to 1.0.0
-    const linkTooltipSave = quill.theme && quill.theme.linkTooltip && quill.theme.linkTooltip.save;
-    if(linkTooltipSave) {
-        quill.theme.linkTooltip.save = function (...args) {
-            const url = this.textbox.value;
-            const urlStartsWithHttp = url.indexOf("http") === 0;
-            if(!urlStartsWithHttp) {
-                this.textbox.value = `https://${url}`;
-            }
-            // Run the default behavior
-            linkTooltipSave.apply(this, args);
-        };
-    }
+    const Link = Quill.import('formats/link');
+    Link.sanitize = function(url) {
+        // modify url if desired
+        const urlStartsWithHttp = url.indexOf("http") === 0;
+        if(!urlStartsWithHttp) {
+            url = `https://${url}`;
+        }
+        return url;
+    };
 }
 
 /**

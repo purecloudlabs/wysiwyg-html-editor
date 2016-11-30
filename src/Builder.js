@@ -16,7 +16,7 @@ const DEFAULT_TOOLBAR_TEMPLATE = require("./templates/defaultToolbar.hbs");
 */
 function Builder(target) {
     //Include the necessary CSS files, if it hasn't been included already
-    require("quill/dist/quill.css");
+    require("quill/dist/quill.core.css");
 
     if(typeof target === "string") {
         target = document.querySelector(target);
@@ -53,6 +53,7 @@ Builder.prototype.withDefaultToolbar = function (toolbarContainer, locale) {
     toolbarContainer.innerHTML = DEFAULT_TOOLBAR_TEMPLATE({});
 
     this.options = _assign(this.options, {
+        bounds: document.body,
         theme: "snow",
         modules: {
             toolbar: toolbarContainer
