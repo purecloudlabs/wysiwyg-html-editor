@@ -16,7 +16,7 @@ const DEFAULT_TOOLBAR_TEMPLATE = require("./templates/defaultToolbar.hbs");
 */
 function Builder(target) {
     //Include the necessary CSS files, if it hasn't been included already
-    require("quill/dist/quill.css");
+    require("quill/dist/quill.core.css");
 
     if(typeof target === "string") {
         target = document.querySelector(target);
@@ -24,8 +24,9 @@ function Builder(target) {
     if(!target) {
         throw new Error("Need a target element or selector for the editor");
     }
+
     this.target = target;
-    this.options = _assign({}, DEFAULT_OPTIONS);
+    this.options = _assign({bounds: target}, DEFAULT_OPTIONS);
 }
 
 /**

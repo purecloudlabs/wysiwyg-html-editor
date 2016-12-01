@@ -1,0 +1,4 @@
+/*https://github.com/quilljs/quill/issues/938 This is where I find the solution to override the visiblity value. In the future we need to look into why this was not working normally.*/
+.ql-snow .ql-out-bottom, .ql-snow .ql-out-top {
+    visibility: visible !important;
+}
