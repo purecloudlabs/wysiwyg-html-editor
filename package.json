@@ -1,7 +1,6 @@
 {
   "name": "wysiwyg-html-editor",
   "version": "0.2.0",
-  "private": true,
   "description": "A reusable \"What You See Is What You Get\" html text editor library for PureCloud",
   "main": "lib.js",
   "repository": {
@@ -19,6 +18,12 @@
   },
   "author": "Interactive Intelligence, Inc.",
   "homepage": "https://bitbucket.org/inindca/wysiwyg-html-editor#readme",
+  "publishConfig": {
+    "registry": "https://purecloud.artifactoryonline.com/purecloud/api/npm/inin-internal-npm-dev/"
+  },
+  "engines": {
+    "node": ">= 6.5.0"
+  },
   "devDependencies": {
     "babel": "^6.5.2",
     "babel-core": "^6.18.2",
