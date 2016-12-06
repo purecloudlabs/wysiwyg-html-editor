@@ -20,18 +20,16 @@ See [documentation](API.md) and [example page](example/index.html) for API usage
 
 Uses webpack with npm scripts for development:
 
-`npm run build` - builds the webpack bundle (`lib.js`) once.
-
 `npm run watch` - builds the webpack bundle and rebuilds it whenever source code changes
 
 `npm run example` - serves the example page at localhost:8000/example
+
+`npm run bundle` - builds the webpack bundle (`lib.js`) once.  Builds the minified, production build.
 
 The normal setup is to run `npm run example` in one terminal and `npm run watch` in another.
 
 ---
 
-NOTE: the built library `lib.js` is checked into the source control.  This isn't ideal (must be kept in sync, changes are essentially duplicated); normally you build just before publishing to `npm`, but so long as we're just including this library directly from source control that's not an option.
+NOTE: If you make changes to the JS Doc comments, please run `npm run doc` to ensure that the API.md stays up-to-date, and check in the results.
 
-The alternative - having downstream codebases build after checking out from source control - is nicer from our end, but a pain since it requires all of this libraries dependencies to be installed just to use the built library.  
-
-A pre-push git hook is included to try to help ensure that lib.js stays up-to-date.
+A pre-push git hook is included to try to help ensure that API.md stays up-to-date.

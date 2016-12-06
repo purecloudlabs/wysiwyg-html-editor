@@ -2,10 +2,10 @@
 
 echo "pre-push: Running a build to ensure documentation and bundle is up-to-date"
 
-npm run build
+npm run doc
 
-if git ls-files -m lib.js API.md | grep .
+if git ls-files -m API.md | grep .
 then
-    echo "pre-push: Error - uncommited changes to lib.js; please commit those before pushing"
+    echo "pre-push: Error - uncommited documentation changes to API.md; please commit those before pushing"
     exit 1
 fi
