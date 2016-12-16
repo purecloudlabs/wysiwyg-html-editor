@@ -16,7 +16,7 @@ const DEFAULT_TOOLBAR_TEMPLATE = require("./templates/defaultToolbar.hbs");
 */
 function Builder(target) {
     //Include the necessary CSS files, if it hasn't been included already
-    require("quill/dist/quill.core.css");
+    require("quill/dist/quill.snow.css"); //quill.snow.css includes quill.core.css as well
 
     if(typeof target === "string") {
         target = document.querySelector(target);
@@ -37,8 +37,6 @@ function Builder(target) {
  * @returns {this}
  */
 Builder.prototype.withDefaultToolbar = function (toolbarContainer, locale) {
-    ///Include the theme style, if it hasn't been included already
-    require("quill/dist/quill.snow.css");
     if(typeof toolbarContainer === "string") {
         toolbarContainer = document.querySelector(toolbarContainer);
 
