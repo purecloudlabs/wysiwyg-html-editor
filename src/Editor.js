@@ -50,7 +50,17 @@ Editor.prototype.getHTML = function() {
     if(!editorContentDiv) {
         throw new Error("Couldn't find editor contents");
     }
-    return editorContentDiv.innerHTML;
+
+    //Set the margin and padding on each paragraph tag to be zero.  The Quill CSS makes its paragraphs
+    // look like this inside the editor; adding it as explicit style will make the output HTML
+    // visually match the editor better.
+    const tmpDiv = document.createElement("div");
+    tmpDiv.innerHTML = editorContentDiv.innerHTML;
+    for (const paragraph of tmpDiv.querySelectorAll("p")) {
+        paragraph.style.margin = 0;
+        paragraph.style.padding = 0;
+    }
+    return tmpDiv.innerHTML;
 };
 
 /**
