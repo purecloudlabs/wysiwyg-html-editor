@@ -12,5 +12,10 @@
     "numberedList": "番号付きリスト",
     "bulletedList": "箇条書き",
     "alignment": "配置",
-    "clearFormatting": "書式のクリア"
+    "clearFormatting": "書式のクリア",
+    "tooltip.edit": "編集",
+    "tooltip.link.label": "リンクを入力:",
+    "tooltip.link.visit": "URL に移動:",
+    "tooltip.remove": "削除",
+    "tooltip.save": "保存"
 }

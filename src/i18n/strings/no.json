@@ -12,5 +12,10 @@
     "numberedList": "Nummerliste",
     "bulletedList": "Punktliste",
     "alignment": "Justering",
-    "clearFormatting": "Fjern formatering"
+    "clearFormatting": "Fjern formatering",
+    "tooltip.edit": "Rediger",
+    "tooltip.link.label": "Oppgi kobling:",
+    "tooltip.link.visit": "Åpne URL:",
+    "tooltip.remove": "Fjern",
+    "tooltip.save": "Lagre"
 }

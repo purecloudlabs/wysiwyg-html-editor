@@ -12,5 +12,10 @@
     "numberedList": "已编号列表",
     "bulletedList": "符号列表",
     "alignment": "对齐方式​​",
-    "clearFormatting": "清除格式"
+    "clearFormatting": "清除格式",
+    "tooltip.edit": "编辑",
+    "tooltip.link.label": "输入链接:",
+    "tooltip.link.visit": "访问 URL:",
+    "tooltip.remove": "删除",
+    "tooltip.save": "保存"
 }
