@@ -12,5 +12,10 @@
     "numberedList": "Numrerad lista",
     "bulletedList": "Punktlista",
     "alignment": "Justering",
-    "clearFormatting": "Rensa formatering"
+    "clearFormatting": "Rensa formatering",
+    "tooltip.edit": "Redigera",
+    "tooltip.link.label": "Ange länk:",
+    "tooltip.link.visit": "Besöksadress:",
+    "tooltip.remove": "Ta bort",
+    "tooltip.save": "Spara"
 }
