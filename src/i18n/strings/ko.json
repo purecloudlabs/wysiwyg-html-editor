@@ -12,5 +12,10 @@
     "numberedList": "숫자 목록",
     "bulletedList": "기호 목록",
     "alignment": "맞춤",
-    "clearFormatting": "형식 초기화"
+    "clearFormatting": "형식 초기화",
+    "tooltip.edit": "편집",
+    "tooltip.link.label": "링크 입력:",
+    "tooltip.link.visit": "URL 방문:",
+    "tooltip.remove": "제거",
+    "tooltip.save": "저장"
 }

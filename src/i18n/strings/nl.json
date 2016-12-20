@@ -12,5 +12,10 @@
     "numberedList": "Genummerde lijst",
     "bulletedList": "Lijst met opsommingstekens",
     "alignment": "Uitlijning",
-    "clearFormatting": "Opmaak wissen"
+    "clearFormatting": "Opmaak wissen",
+    "tooltip.edit": "Bewerken",
+    "tooltip.link.label": "Koppeling invoeren:",
+    "tooltip.link.visit": "URL bezoeken:",
+    "tooltip.remove": "Verwijderen",
+    "tooltip.save": "Opslaan"
 }

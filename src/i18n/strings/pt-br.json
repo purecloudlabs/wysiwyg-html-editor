@@ -12,5 +12,10 @@
     "numberedList": "Lista numerada",
     "bulletedList": "Lista com marcadores",
     "alignment": "Alinhamento",
-    "clearFormatting": "Limpar formatação"
+    "clearFormatting": "Limpar formatação",
+    "tooltip.edit": "Editar",
+    "tooltip.link.label": "Inserir link:",
+    "tooltip.link.visit": "Visitar URL:",
+    "tooltip.remove": "Remover",
+    "tooltip.save": "Salvar"
 }
