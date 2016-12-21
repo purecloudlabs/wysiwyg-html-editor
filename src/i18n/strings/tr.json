@@ -12,5 +12,10 @@
     "numberedList": "Numaralı Liste",
     "bulletedList": "Madde İmli Liste",
     "alignment": "Hizalama",
-    "clearFormatting": "Biçimlendirmeyi Temizle"
+    "clearFormatting": "Biçimlendirmeyi Temizle",
+    "tooltip.edit": "Düzenle",
+    "tooltip.link.label": "Bağlantıyı girin:",
+    "tooltip.link.visit": "URL'yi ziyaret edin:",
+    "tooltip.remove": "Kaldır",
+    "tooltip.save": "Kaydet"
 }

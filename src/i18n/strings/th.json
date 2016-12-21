@@ -12,5 +12,10 @@
     "numberedList": "รายการลำดับเลข",
     "bulletedList": "รายการสัญลักษณ์แสดงหัวข้อย่อย",
     "alignment": "การจัดแนว",
-    "clearFormatting": "ล้างรูปแบบ"
+    "clearFormatting": "ล้างรูปแบบ",
+    "tooltip.edit": "แก้ไข",
+    "tooltip.link.label": "ป้อนลิงค์:",
+    "tooltip.link.visit": "ไปที่ URL:",
+    "tooltip.remove": "ลบออก",
+    "tooltip.save": "บันทึก"
 }
