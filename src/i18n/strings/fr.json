@@ -16,6 +16,6 @@
     "tooltip.edit": "Modifier",
     "tooltip.link.label": "Entrer un lien :",
     "tooltip.link.visit": "Visiter l'URL :",
-    "tooltip.remove": "Supprimer",
-    "tooltip.save": "Enregistrer"
+    "tooltip.remove": "Retirer",
+    "tooltip.save": "Sauvegarder"
 }
