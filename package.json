@@ -17,9 +17,6 @@
   },
   "author": "Interactive Intelligence, Inc.",
   "homepage": "https://bitbucket.org/inindca/wysiwyg-html-editor#readme",
-  "publishConfig": {
-    "registry": "https://purecloud.artifactoryonline.com/purecloud/api/npm/inin-internal-npm-dev/"
-  },
   "files": [
     "lib.js",
     "lib.js.map"
